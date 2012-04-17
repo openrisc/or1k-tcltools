@@ -1,0 +1,1 @@
+%QUARTUS_ROOTDIR%\bin\quartus_stp -t run.tcl %1

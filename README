@@ -1,0 +1,63 @@
+Welcome to or1k-tcltools !
+==========================
+
+1) Introduction
+---------------
+
+or1k-tcltools provides a series of Tcl scripts working together with the
+OpenRISC processor used on Altera platforms using the Virtual JTAP TAP and
+the Advanced Debug Interface.
+
+The Quartus II graphical user interface provides the Tcl Console, which allows
+you to control the Quartus II software with Tcl commands and scripts. Each of
+the Quartus II executables— quartus_sh, quartus_map, quartus_fit, quartus_sta,
+and others— also functions as a Tcl interpreter.
+
+Depending on wich executable is used, different packages are loaded into memory.
+The JTAG package is only available with quartus_stp.
+
+The JTAG package provides a set of Tcl functions for controlling the JTAG chain
+using Altera programming hardware:
+
+	close_device
+	device_dr_shift
+	device_ir_shift
+	device_lock
+	device_run_test_idle
+	device_unlock
+	device_virtual_dr_shift
+	device_virtual_ir_shift
+	get_device_names
+	get_hardware_names
+	open_device
+
+Thus, the Virutal JTAG instance controlling our Advanced Debug Interface can be
+controled from the Tcl script.
+
+2) Provided files
+-----------------
+
+defines.tcl        --> Defines for debug interface controled
+functions.tcl      --> Helper functions
+loader.tcl         --> Low level control of the JTAG / debug interfaces
+download.tcl       --> Download and run ELF executables (or1krun function)
+or1k-download.bat  --> Start or1krun from a Windows command line
+run.tcl            --> Startup script used by the or1k-download.bat file
+
+3) Usage
+--------
+
+* From a Windows command shell:
+
+or1k-download "yourfile.elf"
+
+* From a Tcl console:
+
+source download.tcl
+or1krun "yourfile.elf"
+
+Using the Tcl console you also have access to the "registers" command. This
+command shows you the registers values.
+
+
+

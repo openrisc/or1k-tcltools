@@ -274,7 +274,6 @@ proc parse { file_name } {
 	}
 
 	run_cpu0
-	reset_cpu0
 
 	close_jtag
 

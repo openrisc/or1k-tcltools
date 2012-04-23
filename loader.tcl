@@ -348,6 +348,7 @@ proc unstall_cpu0 {} {
 
 proc run_cpu0 {} {
 	set D(0) 0x100
+	adbg_select_module [DC_CPU0]
 	adbg_wb_burst_write [DC_CPU0] 4 1 0x10 D
 	adbg_select_ctrl_reg [DC_CPU0] [DBG_CPU0_REG_STATUS]
 	adbg_ctrl_write [DC_CPU0] [DBG_CPU0_REG_STATUS] 0 2

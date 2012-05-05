@@ -23,7 +23,7 @@
 source [file dirname [info script]]/defines.tcl
 source [file dirname [info script]]/loader.tcl
 
-proc parse { file_name } {
+proc or1krun { file_name } {
 
 	set file [open $file_name r]
 	fconfigure $file -translation binary

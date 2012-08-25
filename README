@@ -47,7 +47,7 @@ run.tcl            --> Startup script used by the or1k-download.bat file
 3) Usage
 --------
 
-* From a Windows command shell:
+* From a Windows/Linux command shell:
 
 or1k-download "yourfile.elf"
 
@@ -58,6 +58,4 @@ or1krun "yourfile.elf"
 
 Using the Tcl console you also have access to the "registers" command. This
 command shows you the registers values.
-
-
 

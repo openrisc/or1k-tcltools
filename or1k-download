@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ELF_DIR=$(pwd)
+cd /home/franck/openRISC/or1k-tcltools/
+quartus_stp -t run.tcl $ELF_DIR/$1

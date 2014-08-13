@@ -165,7 +165,7 @@ proc adbg_ctrl_read { chain data databits} {
 
 proc adbg_burst_command {opcode address length} {
 
-	set data0 [expr { $length | $address << 16 }]
+	set data0 [expr { $length | ($address & 0xffff) << 16 }]
 	set data0hex [format %08X $data0]
 
 	set data1 [ expr { ($address >> 16) | (($opcode & 0xf) << 16) & ~(0x1<<20) } ]

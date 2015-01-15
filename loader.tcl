@@ -327,6 +327,12 @@ proc registers {} {
 	close_jtag
 }
 
+proc set_reg {register value} {
+	set D(0) $value
+	adbg_select_module [DC_CPU0]
+	adbg_wb_burst_write [DC_CPU0] 4 1 $register D
+}
+
 proc reset_cpu0 {} {
 	adbg_select_module [DC_CPU0]
 	adbg_select_ctrl_reg [DC_CPU0] [DBG_CPU0_REG_STATUS]
@@ -347,9 +353,8 @@ proc unstall_cpu0 {} {
 }
 
 proc run_cpu0 {} {
-	set D(0) 0x100
+	set_reg [NPC] 0x100
 	adbg_select_module [DC_CPU0]
-	adbg_wb_burst_write [DC_CPU0] 4 1 [NPC] D
 	adbg_select_ctrl_reg [DC_CPU0] [DBG_CPU0_REG_STATUS]
 	adbg_ctrl_write [DC_CPU0] [DBG_CPU0_REG_STATUS] 0 2
 }

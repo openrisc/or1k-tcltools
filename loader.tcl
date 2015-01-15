@@ -28,10 +28,16 @@ source [file dirname [info script]]/defines.tcl
 # Loads usefull functions
 source [file dirname [info script]]/functions.tcl
 
+set current_module [DC_UNDEFINED]
+
 proc adbg_select_module {chain} {
 
-	set data [expr ($chain | (1 << [DBG_MODULE_SELECT_REG_SIZE]))]
-	device_virtual_dr_shift -instance_index 0 -length 3 -dr_value $data -value_in_hex -no_captured_dr_value
+	global current_module
+	if {$chain != $current_module} {
+		set data [expr ($chain | (1 << [DBG_MODULE_SELECT_REG_SIZE]))]
+		device_virtual_dr_shift -instance_index 0 -length 3 -dr_value $data -value_in_hex -no_captured_dr_value
+		set current_module $chain
+	}
 }
 
 #

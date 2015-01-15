@@ -5,6 +5,7 @@ proc BLOCK_SIZE				{}	{ return 64 }
 proc DBG_MODULE_SELECT_REG_SIZE		{}	{ return 2 }
 proc DBG_MAX_MODULES			{}	{ return 4 }
 
+proc DC_UNDEFINED			{}	{ return -1 }
 proc DC_WISHBONE			{}	{ return 0 }
 proc DC_CPU0				{}	{ return 1 }
 proc DC_CPU1				{}	{ return 2 }

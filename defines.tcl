@@ -57,3 +57,24 @@ proc DBG_CPU1_CMD_BWRITE32		{} { return 0x3 }
 proc DBG_CPU1_CMD_BREAD32		{} { return 0x7 }
 proc DBG_CPU1_CMD_IREG_WR		{} { return 0x9 }
 proc DBG_CPU1_CMD_IREG_SEL		{} { return 0xd }
+
+# GPR address
+proc R0					{}	{ return 0x400 }
+proc R1					{}	{ return 0x401 }
+proc R2					{}	{ return 0x402 }
+proc R3					{}	{ return 0x403 }
+proc R4					{}	{ return 0x404 }
+proc R5					{}	{ return 0x405 }
+proc R6					{}	{ return 0x406 }
+proc R7					{}	{ return 0x407 }
+proc R8					{}	{ return 0x408 }
+proc R9					{}	{ return 0x409 }
+proc R10				{}	{ return 0x40a }
+proc R11				{}	{ return 0x40b }
+proc R12				{}	{ return 0x40c }
+proc R13				{}	{ return 0x40d }
+proc R14				{}	{ return 0x40e }
+proc R15				{}	{ return 0x40f }
+
+# SPR
+proc NPC				{}	{ return 0x10 }
